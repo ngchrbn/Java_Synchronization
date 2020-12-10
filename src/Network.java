@@ -2,9 +2,8 @@ import java.util.Scanner;
 
 public class Network {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         int numberOfConnections;
-        String deviceName;
         Scanner input = new Scanner(System.in);
         System.out.println("What is the number of WI-FI connections?");
         numberOfConnections = input.nextInt();
@@ -23,9 +22,7 @@ public class Network {
             devices[i] = new Device(("C" + (i+1)), type, routeur);
         }
 
-        for (int j=0; j<numberOfDevices; j++) {
-            Thread.sleep(1000);
-            devices[j].start();
-        }
+        for (Device device: devices)
+            device.start();
     }
 }
