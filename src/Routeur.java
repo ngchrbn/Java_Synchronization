@@ -26,7 +26,7 @@ public class Routeur {
                 System.out.println("Connection " + device.givenConnection +
                         ": " + device.getType() + " occupied");
                 connections[i] = true;
-                Thread.sleep(1000);
+                Thread.sleep(3000);
                 break;
             }
         }
@@ -39,7 +39,7 @@ public class Routeur {
      * @throws InterruptedException ex
      */
     public String surf() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         return " performs online activity";
     }
 
@@ -52,7 +52,7 @@ public class Routeur {
     public synchronized String release(Device device) throws InterruptedException {
         nBusy--;
         connections[device.givenConnection-1] = false;
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         return " logged out";
     }
 }
